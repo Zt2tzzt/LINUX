@@ -7,7 +7,7 @@
 - 图形化使用，使用操作系统提供的图形化界面，以获得**图形化反馈**的形式去使用操作系统。
 - 命令的使用，使用操作系统提供的各类命令，以获得**字符反馈**的形式去使用操作系统。
 
-不论是 Windows 还是 Linux 亦或是 MacOS 系统，都是支持这两种使用形式。
+不论是 Windows、Linux 还是 MacOS 系统，都支持这两种使用形式。
 
 ## 二、 Linux 为什么要用命令行？
 
@@ -17,11 +17,9 @@ Linux 从诞生至今，在图形化页面的优化上，并未重点发力。�
 
 ## 三、FinalShell 远程连接 Linux
 
-[FinalShell 官网](https://www.hostbuf.com)
+再[FinalShell 官网](https://www.hostbuf.com)进行下载
 
-打开 Finshell 软件，配置到 Linux 系统的连接。
-
-配置连接；
+打开 Finshell 软件，配置远程 Linux 系统的连接。
 
 打开连接管理器，双击配置好的连接。
 
