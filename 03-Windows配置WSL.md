@@ -22,7 +22,7 @@ WSL（Windows Subsystem for Linux）是用于 Windows 系统之上的 Linux 子�
 
 WSL 是 Windows10 自带功能，需要开启，无需下载
 
-打开系统的“启用或关闭Windows功能”，勾选“适用于Linux的Windows子系统”。
+打开系统的“启用或关闭 Windows 功能”，勾选“适用于 Linux 的 Windows 子系统”。
 
 然后重启电脑。
 
@@ -32,9 +32,9 @@ WSL 是 Windows10 自带功能，需要开启，无需下载
 
 点击下载好的 Ubuntu 启动。
 
-输入用户名，用以创建一个用户。
+输入用户名，用以创建一个用户 `zetian`。
 
-输入两次密码确认（输入的密码没有反馈）。
+输入两次密码确认 `123456`（输入的密码没有反馈）。
 
 至此，得到了一个可用的 Ubuntu 操作环境。
 
@@ -42,6 +42,6 @@ WSL 是 Windows10 自带功能，需要开启，无需下载
 
 Ubuntu 自带的终端窗口软件不太好用，可以使用微软推出的：Windows Terminal 软件
 
-在应用商店中搜索 terminal 关键字，找到Windows Terminal 软件下载并安装。
+在应用商店中搜索 terminal 关键字，找到 Windows Terminal 软件下载并安装。
 
 在 Windows Termina 中，设置默认代开 Ubuntu。
