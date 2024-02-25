@@ -6,7 +6,7 @@ cd 切换工作目录
 
 cd命令来自英文：Change Directory
 
-当 Linux 终端（命令行）打开的时候，会默认以用户的 HOME 目录作为当前的工作目录
+普通用户的 Linux 命令行打开的时候，会默认以用户的 HOME 目录作为当前的工作目录
 
 可以通过 cd 命令，更改当前所在的工作目录。
 
@@ -19,7 +19,7 @@ cd 命令无需选项，只有参数，表示要切换到哪个目录下
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]#
 ```
 
-cd 命令直接执行，不写参数，表示回到用户的 HOME 目录
+cd 命令直接执行，不写参数，表示回到普通用户的 HOME 目录
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cd
@@ -31,7 +31,7 @@ cd 命令直接执行，不写参数，表示回到用户的 HOME 目录
 
 pwd 查看当前工作目录
 
-pwd命令来自英文：Print Work Directory
+pwd 命令来自英文：Print Work Directory
 
 语法：`pwd`
 

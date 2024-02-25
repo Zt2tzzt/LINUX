@@ -2,7 +2,7 @@
 
 mkdir 命令用于创建新的目录（文件夹）
 
- mkdir来自英文：Make Directory
+mkdir来自英文：Make Directory
 
 语法：`mkdir [-p] [Linux路径]`
 
@@ -16,5 +16,5 @@ mkdir 命令用于创建新的目录（文件夹）
 ```
 
 > 注意：创建文件夹需要修改权限，普通用户，请确保操作均在 HOME 目录内，不要在 HOME 外操作，会涉及到权限问题。
-
+>
 > 补充：FinalShell 快捷键：ctrl + l 清空命令行
