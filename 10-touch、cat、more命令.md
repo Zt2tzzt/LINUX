@@ -12,7 +12,7 @@ touch 命令无选项，参数必填，表示要创建的文件路径。
 
 语法：`cat [Linux路径]`
 
-cat 同样没有选项，只有必填参数，参数表示：被查看的文件路径。
+cat 没有选项，只有必填参数，参数表示：被查看的文件路径。
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ~]# cat ~/ZeTianShop/test.txt
@@ -32,7 +32,7 @@ more 命令同样可以查看文件内容，与 cat 不同的是：
 
 查看 /etc/services 文件
 
-``more /etc/services`
+`more /etc/services`
 
 使用空格翻页。
 

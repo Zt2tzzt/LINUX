@@ -10,7 +10,7 @@ Linux 的目录结构是一个树型结构
 
 ![Linux目录结构](/Users/zetian/workshop/tutorial/LINUX/NoteAssets/Linux目录结构.png)
 
-Linux 没有盘符这个概念, 只有一个根目录 /, 所有文件都在它下面
+Linux 没有盘符这个概念, 只有一个根目录 /，所有文件都在它下面
 
 ## 二、Linux 的路径描述方式
 
@@ -19,7 +19,7 @@ Linux 没有盘符这个概念, 只有一个根目录 /, 所有文件都在它�
 比如：`D:\data\work\hello.txt`
 
 - `D:` 表示 D 盘
-- `\` 表示层级关系**
+- `\` 表示层级关系
 
 在 Linux 系统中，路径之间的层级关系，使用：`/`  来表示
 
@@ -40,6 +40,6 @@ Linux 没有盘符这个概念, 只有一个根目录 /, 所有文件都在它�
 
 `/test.txt`
 
-在根目录下有一个文件夹 zetian，在 zetian 文件夹内，有文件夹 haha，在 haha 文件夹内，有文件 test.txt，请描述文件的路径
+在根目录下有一个文件夹 zetian，下面有文件夹 haha，下面有文件 test.txt，请描述文件的路径
 
 `/zetian/haha/test.txt`

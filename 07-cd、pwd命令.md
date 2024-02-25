@@ -4,7 +4,7 @@
 
 cd 切换工作目录
 
-cd命令来自英文：Change Directory
+cd 命令来自英文：Change Directory
 
 普通用户的 Linux 命令行打开的时候，会默认以用户的 HOME 目录作为当前的工作目录
 
