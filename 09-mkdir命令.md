@@ -4,7 +4,7 @@ mkdir 命令用于创建新的目录（文件夹）
 
 mkdir来自英文：Make Directory
 
-语法：`mkdir [-p] [Linux路径]`
+语法：`mkdir [-p] Linux路径`
 
 - 参数必填，表示 Linux 路径，即要创建的文件夹的路径。
 - `-p` 选项可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录。

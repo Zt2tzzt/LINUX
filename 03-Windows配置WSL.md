@@ -14,7 +14,7 @@ WSL 作为 Windows 系统带来的全新特性，正在逐步颠覆开发人员�
 
 WSL（Windows Subsystem for Linux）是用于 Windows 系统之上的 Linux 子系统。
 
-作用很简单，可以在 Windows 系统中获得 Linux 系统环境，并完全直连计算机硬件，无需通过虚拟机虚拟硬件。且不会影响Windows 系统本身的运行
+作用很简单，可以在 Windows 系统中获得 Linux 系统环境，并完全直连计算机硬件，无需通过虚拟机虚拟硬件。且不会影响 Windows 系统本身的运行
 
 ![WSL](/Users/zetian/workshop/tutorial/LINUX/NoteAssets/WSL.png)
 
