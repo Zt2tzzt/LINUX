@@ -150,7 +150,7 @@ echo "我当前的工作目录是：`pwd`" >> work.txt
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# echo "我当前的工作目录是：`pwd`" >> work.txt
-[root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cat work.txt 
+[root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cat work.txt
 我当前的工作目录是：/root/ZeTianShop
 ```
 
@@ -161,4 +161,3 @@ tail -f work.txt
 
 echo "haha" >> work.txt
 ```
-

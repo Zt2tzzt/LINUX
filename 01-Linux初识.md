@@ -21,7 +21,7 @@ Linux 系统的组成：
 - 可以理解为出厂自带程序，供用户快速上手操作系统，比如： 文件管理器、任务管理器、图片查看、音乐播放等。
 - 当用户播放音乐时，无论用户使用自带音乐播放器，或是自行安装的第三方播放器，都是由播放器程序，调用内核提供的相关功能，再由内核调度 CPU 解码、音响发声等。
 
-![Linux系统的组成部分](/Users/zetian/workshop/tutorial/LINUX/NoteAssets/Linux系统的组成部分.png)
+![Linux系统的组成部分](.//NoteAssets/Linux系统的组成部分.png)
 
 Linux 内核是免费开源的，任何人都可以[下载](https://www.kernel.org )内核源码并查看且修改。
 
@@ -49,7 +49,7 @@ A(系统程序) --> |调用| B(内核)
 
 市面上有非常多的发行版，常用的，知名的如下：
 
-![Linux发行版](/Users/zetian/workshop/tutorial/LINUX/NoteAssets/Linux发行版.png)
+![Linux发行版](.//NoteAssets/Linux发行版.png)
 
 不同的发行版：
 

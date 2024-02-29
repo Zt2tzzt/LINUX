@@ -15,11 +15,19 @@ cd 命令来自英文：Change Directory
 cd 命令无需选项，只有参数，表示要切换到哪个目录下
 
 ```shell
+cd /root/ZeTianShop/
+```
+
+```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ~]# cd /root/ZeTianShop/
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]#
 ```
 
-cd 命令直接执行，不写参数，表示回到普通用户的 HOME 目录
+cd 命令直接执行，不写参数，表示回到普通用户的 HOME 目录，或超级管理员的 root 目录
+
+```shell
+cd
+```
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cd
@@ -36,6 +44,10 @@ pwd 命令来自英文：Print Work Directory
 语法：`pwd`
 
 pwd 命令，无选项，无参数，直接输入 pwd 即可
+
+```shell
+pwd
+```
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ~]# pwd

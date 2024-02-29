@@ -122,9 +122,9 @@ wc -w zetian.txt
 
 ## 三、管道符
 
-了解了 grep 命令后，我们再来学习一个新的特殊符号，管道符：`|`
+了解了 grep 命令后，再介绍一个新的特殊符号，管道符：`|`
 
-管道符的含义是：将管道符左边命令的结果，作为右边命令的输入
+管道符的含义是：将管道符左边命令的结果，作为右边命令的输入。
 
 将 `cat zetian.txt` 的输出结果（文件内容），作为右边 grep 命令的输入（被过滤文件）
 
@@ -133,7 +133,7 @@ cat zetian.txt | grep "kkcf"
 ```
 
 ```shell
-[root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cat zetian.txt |cat zetian.txt | grep "kkcf"
+[root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cat zetian.txt | grep "kkcf"
 zetian is a staff of kkcf
 kkcf full name is KunKunChickenFarm
 ```
@@ -206,8 +206,13 @@ kkcf full name is KunKunChickenFarm
 
 统计文件中带有 KunKunChickenFarm 关键字的有几行
 
+```shell
 cat zetian.txt | grep "KunKunChickenFarm" | wc -l
+```
 
 统计文件中带有 kkcf 关键字的结果中有多少个单词
 
+```shell
 cat zetian.txt | grep "kkcf" | wc -w
+```
+
