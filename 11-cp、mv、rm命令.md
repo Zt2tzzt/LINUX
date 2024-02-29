@@ -12,7 +12,7 @@ cp 命令来自英文单词：copy。可以用于复制文件、文件夹
 
 ### 1.复制文件
 
-将当前工作目录的 test.txt 复制为 text2.txt
+将当前工作目录的 test.txt 文件复制为 text2.txt 文件
 
 ```shell
 cp test.txt test2.txt
@@ -20,14 +20,16 @@ cp test.txt test2.txt
 
 ### 2.复制文件夹（必须用 -r 选项）
 
-复制当前工作目录的 test1 文件夹为 test4。发现有“略过目录”的提示。
+将当前工作目录的 test1 文件夹复制为 test4 文件夹；
+
+发现有“略过目录”的提示。
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# cp test1 test4
 cp: 略过目录"test1"
 ```
 
-复制文件夹，必须使用 `-r` 选项，否则不会生效。
+cp 命令复制文件夹，必须使用 `-r` 选项，否则不会生效。
 
 ```shell
 cp -r test1 test11
@@ -101,7 +103,7 @@ rm test1.txt test2.txt test3.txt
 rm: 无法删除"test1": 是一个目录
 ```
 
-删除文件夹，必须使用 `-r` 选项
+rm 命令删除文件夹，必须使用 `-r` 选项
 
 ```shell
 rm -r test1
