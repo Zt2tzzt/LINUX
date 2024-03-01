@@ -6,7 +6,7 @@ echo 命令，用于在命令行内输出指定内容。
 
 语法：`echo 输出的内容`
 
-无需选项，只有一个参数，表示要输出的内容，复杂内容（带有空格或 \ 等特殊符号），建议使用双引号包围可以用””包围，不然会影响命令的执行。
+无需选项，只有一个参数，表示要输出的内容，复杂内容（带有空格或 \ 等特殊符号），建议使用双引号包围，不然会影响命令的执行。
 
 在终端上显示：Hello Linux
 
@@ -40,7 +40,7 @@ echo `pwd`
 
 `>>`，将左侧命令的结果，追加写入到符号右侧指定的文件中。
 
-将 Hello Linux 写入岛当前工作目录的 zetian.txt 中，并覆盖其中的内容。
+将 "Hello Linux" 写入岛当前工作目录的 zetian.txt 中，并覆盖其中的内容。
 
 ```shell
 echo "Hello Linux" > zetian.txt
@@ -52,7 +52,7 @@ echo "Hello Linux" > zetian.txt
 Hello Linux
 ```
 
-将 Hello KunKunChickenFarm 写入岛当前工作目录的 zetian.txt 中，并追加在最后面。
+将 "Hello KunKunChickenFarm" 写入岛当前工作目录的 zetian.txt 中，并追加在最后面。
 
 ```shell
 echo "Hello KunKunChickenFarm" >> zetian.txt
@@ -138,11 +138,11 @@ tail 命令跟踪文件变化：
 
 在第二个标签中，多次执行：`echo “内容” >> test.txt`，向文件追加内容
 
-观察第一个标签的变化
+观察第一个标签的变化。
 
 ## 五、练习
 
-使用 echo 并配合反引号，输出内容：我当前的工作目录是：`具体的工作目录路径`，并结合重定向符，将输出结果覆盖写入work.txt文件
+使用 echo 并配合反引号，输出内容：“我当前的工作目录是：`具体的工作目录路径`”，并结合重定向符，将输出结果覆盖写入work.txt文件
 
 ```shell
 echo "我当前的工作目录是：`pwd`" >> work.txt
@@ -154,7 +154,7 @@ echo "我当前的工作目录是：`pwd`" >> work.txt
 我当前的工作目录是：/root/ZeTianShop
 ```
 
-使用 echo 输出任意内容，并追加到 work.txt 文件中；通过 tail 命令持续跟踪文件内容更改。
+使用 echo 输出任意内容，并追加到 work.txt 文件中；通过 tail 命令持续跟踪 work.txt 文件内容更改。
 
 ```shell
 tail -f work.txt

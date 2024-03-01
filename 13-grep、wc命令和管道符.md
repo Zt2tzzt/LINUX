@@ -10,14 +10,14 @@
 - `"关键字"`，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来。
 - `文件路径`，必填，表示要过滤内容的文件的路径，可作为内容输入端口。
 
-现在，通过 touch 命令在 ZeTianShop 目录创建 zetian.txt，并通过图形化界面编辑并保存如下内容：
+现在，通过 touch 命令在 ZeTianShop 目录创建文件 zetian.txt，然后通过图形化界面编辑并保存如下内容：
 
 ```txt
 zetian is a staff of kkcf
 kkcf full name is KunKunChickenFarm
 ```
 
-过滤 zetian 关键字
+在 zetian.txt 中，过滤 zetian 关键字
 
 ```shell
 grep "zetian" zetian.txt
@@ -28,7 +28,7 @@ grep "zetian" zetian.txt
 zetian is a employee of kkcf
 ```
 
-过滤 kkcf 关键字
+在 zetian.txt 中，过滤 kkcf 关键字
 
 ```shell
 grep "kkcf" zetian.txt
@@ -40,7 +40,7 @@ zetian is a employee of kkcf
 kkcf full name is KunKunChickenFarm
 ```
 
-过滤 full 关键字，并显示行号
+在 zetian.txt 中，过滤 full 关键字，并显示行号
 
 ```shell
 grep -n "full" zetian.txt
@@ -122,8 +122,6 @@ wc -w zetian.txt
 
 ## 三、管道符
 
-了解了 grep 命令后，再介绍一个新的特殊符号，管道符：`|`
-
 管道符的含义是：将管道符左边命令的结果，作为右边命令的输入。
 
 将 `cat zetian.txt` 的输出结果（文件内容），作为右边 grep 命令的输入（被过滤文件）
@@ -187,7 +185,7 @@ ls -l /usr/bin | wc -l
 
 将 `cat zetian.txt` 的输出结果（文件内容），作为右边 grep 命令的输入（被过滤文件），再作为右边 grep 命令的输入（被过滤的文件）
 
-管道如的嵌套使用。
+管道符的嵌套使用。
 
 ```shell
 cat zetian.txt | grep "kkcf" | grep "KunKunChickenFarm"
@@ -202,7 +200,7 @@ kkcf full name is KunKunChickenFarm
 
 对创建的 zetian.txt 进行统计
 
-请使用 cat、grep、管道符、wc 命令组合，进行统计：
+请使用 cat、grep、wc 命令、管道符组合，进行统计：
 
 统计文件中带有 KunKunChickenFarm 关键字的有几行
 
