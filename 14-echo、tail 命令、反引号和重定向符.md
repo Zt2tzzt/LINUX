@@ -40,7 +40,7 @@ echo `pwd`
 
 `>>`，将左侧命令的结果，追加写入到符号右侧指定的文件中。
 
-将 "Hello Linux" 写入岛当前工作目录的 zetian.txt 中，并覆盖其中的内容。
+将 "Hello Linux" 写入到当前工作目录的 zetian.txt 中，并覆盖其中的内容。
 
 ```shell
 echo "Hello Linux" > zetian.txt
@@ -52,7 +52,7 @@ echo "Hello Linux" > zetian.txt
 Hello Linux
 ```
 
-将 "Hello KunKunChickenFarm" 写入岛当前工作目录的 zetian.txt 中，并追加在最后面。
+将 "Hello KunKunChickenFarm" 写入到当前工作目录的 zetian.txt 中，并追加在最后面。
 
 ```shell
 echo "Hello KunKunChickenFarm" >> zetian.txt
@@ -142,7 +142,7 @@ tail 命令跟踪文件变化：
 
 ## 五、练习
 
-使用 echo 并配合反引号，输出内容：“我当前的工作目录是：`具体的工作目录路径`”，并结合重定向符，将输出结果覆盖写入work.txt文件
+使用 echo 并配合反引号，输出内容：“我当前的工作目录是：`具体的工作目录路径`”，并结合重定向符，将输出结果覆盖写入 work.txt 文件
 
 ```shell
 echo "我当前的工作目录是：`pwd`" >> work.txt

@@ -47,13 +47,17 @@ su 命令，来源英文单词：Switch User，可用于从普通用户切换到
 
 切换到 root 用户，执行 `visudo` 命令，会自动通过 vi 编辑器打开：/etc/sudoers
 
+```shell
+visudo
+```
+
 在文件的最后添加：
 
 ```txt
 zetian ALL=(ALL)        NOPASSWD: ALL
 ```
 
-其中最后的 "NOPASSWD: ALL" 表示使用 sudo 命令，无需输入密码
+其中最后的 "NOPASSWD: ALL" 表示使用 sudo 命令，无需输入密码。
 
 最后通过 `wq` 保存。
 

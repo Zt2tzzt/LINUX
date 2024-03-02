@@ -57,10 +57,10 @@ grep -n "full" zetian.txt
 
 语法：`wc [-c -m -l -w] 文件路径`
 
-- `-c` 选项，统计 bytes 数量。
-- `-m` 选项，统计字符数量。
 - `-l` 选项，统计行数。
 - `-w` 选项，统计单词数量。
+- `-c` 选项，统计 bytes 数量。
+- `-m` 选项，统计字符数量。
 - `文件路径` 参数，被统计的文件，可作为内容输入端口。
 
 不加选项：统计文件
@@ -147,7 +147,7 @@ cat zetian.txt | wc -l
 1
 ```
 
-> 只要能产生内容输出的命令，都可以结合管道符使用
+只要能产生内容输出的命令，都可以结合管道符使用
 
 将 `ls` 的输出结果（当前目录下内容），作为右边 grep 命令的输入（被过滤的内容）
 
@@ -198,19 +198,18 @@ kkcf full name is KunKunChickenFarm
 
 ## 三、练习
 
-对创建的 zetian.txt 进行统计
+对创建的 zetian.txt 进行统计。
 
-请使用 cat、grep、wc 命令、管道符组合，进行统计：
+要求使用 cat、grep、wc 命令、管道符，进行统计：
 
-统计文件中带有 KunKunChickenFarm 关键字的有几行
+统计文件中带有 KunKunChickenFarm 关键字的有几行：
 
 ```shell
 cat zetian.txt | grep "KunKunChickenFarm" | wc -l
 ```
 
-统计文件中带有 kkcf 关键字的结果中有多少个单词
+统计文件中带有 kkcf 关键字的结果中有多少个单词：
 
 ```shell
 cat zetian.txt | grep "kkcf" | wc -w
 ```
-
