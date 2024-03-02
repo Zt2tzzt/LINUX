@@ -40,7 +40,7 @@ WSL 是 Windows10 自带功能，需要开启，无需下载
 
 ---
 
-Ubuntu 自带的终端窗口软件不太好用，可以使用微软推出的：Windows Terminal 软件
+Ubuntu 自带的终端窗口软件不太好用，可以使用微软推出的：Windows Terminal 软件。
 
 在应用商店中搜索 terminal 关键字，找到 Windows Terminal 软件下载并安装。
 
