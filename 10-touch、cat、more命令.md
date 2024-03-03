@@ -6,6 +6,12 @@
 
 touch 命令无选项，参数必填，表示要创建的文件路径。
 
+在当前工作目录的 zetian 目录内，创建 test.txt 文件
+
+````shell
+touch /zetian/test.txt
+````
+
 ## 二、cat 命令查看文件内容
 
 准备好文件内容后，通过 cat 命令查看内容。
@@ -13,6 +19,10 @@ touch 命令无选项，参数必填，表示要创建的文件路径。
 语法：`cat Linux路径`
 
 cat 没有选项，只有必填参数，参数表示：被查看的文件路径。
+
+```shell
+cat ~/ZeTianShop/test.txt
+```
 
 ```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ~]# cat ~/ZeTianShop/test.txt

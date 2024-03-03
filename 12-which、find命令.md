@@ -100,7 +100,7 @@ find / -size -10k
 find / -size +100M
 ```
 
-查找大于1GB的文件：
+查找大于 1GB 的文件：
 
 ```shell
 find / -size +1G

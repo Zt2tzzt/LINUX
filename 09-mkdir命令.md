@@ -12,6 +12,10 @@ mkdir来自英文：Make Directory
 使用 mkdir 命令的 -p 选项，创建不存在的多层级目录
 
 ```shell
+mkdir -p test3/good/888
+```
+
+```shell
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]# mkdir -p test3/good/888
 ```
 

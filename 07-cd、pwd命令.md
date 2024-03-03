@@ -23,7 +23,7 @@ cd /root/ZeTianShop/
 [root@iZwz9clzmhmmlb65bbcvuuZ ZeTianShop]#
 ```
 
-cd 命令直接执行，不写参数，表示回到普通用户的 HOME 目录，或超级管理员的 root 目录
+cd 命令直接执行，不写参数，表示回到普通用户的 HOME 目录，或超级管理员的 /root 目录
 
 ```shell
 cd
