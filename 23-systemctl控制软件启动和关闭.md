@@ -82,7 +82,7 @@ systemctl start ntpd
 3月 03 20:58:15 iZwz9clzmhmmlb65bbcvuuZ ntpd[16733]: 0.0.0.0 c01d 0d kern kernel time sync enabled
 ```
 
-比如 apache 服务器软件的 httpd 软件的 httpd 服务
+比如 apache 服务器的 httpd 软件的 httpd 服务
 
 安装 httpd 软件
 

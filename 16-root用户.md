@@ -51,7 +51,7 @@ su 命令，来源英文单词：Switch User，可用于从普通用户切换到
 visudo
 ```
 
-在文件的最后添加：
+为用户 zetian 配置 sudo 权限，在文件的最后添加：
 
 ```txt
 zetian ALL=(ALL)        NOPASSWD: ALL
@@ -66,5 +66,5 @@ zetian ALL=(ALL)        NOPASSWD: ALL
 ```shell
 sudo ls /root
 
-mkdir /test
+sudomkdir /test
 ```
