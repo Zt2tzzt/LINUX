@@ -66,5 +66,5 @@ zetian ALL=(ALL)        NOPASSWD: ALL
 ```shell
 sudo ls /root
 
-sudomkdir /test
+sudo mkdir /test
 ```
