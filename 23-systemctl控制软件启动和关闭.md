@@ -17,7 +17,7 @@ systemctl 命令能够管理的软件，一般也称之为：服务
 - NetworkManager，主网络服务。
 - network，副网络服务。
 - firewalld，防火墙服务。
-- sshd，ssh 服务（FinalShell 远程登录 Linux 使用的就是这个服务）
+- sshd，ssh 服务（FinalShell 远程登录 Linux 使用的就是这个服务）。
 
 ## 一、系统软件服务
 
