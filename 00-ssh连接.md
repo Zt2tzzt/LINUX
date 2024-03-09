@@ -46,6 +46,17 @@ ssh-keygen -t ed25519 -C "注释，通常是邮箱"
 
 至此，密钥对生成完成了。
 
+通过输入以下命令，您可以更改现有私钥的密码而无需重新生成密钥对：
+
+```she;;
+$ ssh-keygen -p -f ~/.ssh/id_ed25519
+> Enter old passphrase: [Type old passphrase]
+> Key has comment 'your_email@example.com'
+> Enter new passphrase (empty for no passphrase): [Type new passphrase]
+> Enter same passphrase again: [Repeat the new passphrase]
+> Your identification has been saved with the new passphrase.
+```
+
 ### 2.公钥放到服务器上
 
 在服务端，打开 `~/.ssh/authorized_keys` 文件，里面存放了要连接的客户端的公钥。
