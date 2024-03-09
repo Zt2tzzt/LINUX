@@ -19,6 +19,8 @@ systemctl 命令能够管理的软件，一般也称之为：服务
 - firewalld，防火墙服务。
 - sshd，ssh 服务（FinalShell 远程登录 Linux 使用的就是这个服务）。
 
+> d 是 daemon，表示进程。
+
 ## 一、系统软件服务
 
 使用 `systemctl` 命令，开启 firewalld 服务。
