@@ -1,16 +1,16 @@
-# MySQL数据库安装部署【简单】
+# MySQL 数据库安装部署【简单】
 
 ## 一、MySQL 简介
 
-MySQL数据库管理系统（后续简称MySQL），是一款知名的数据库系统，其特点是：轻量、简单、功能丰富。
+MySQL 数据库管理系统（后续简称 MySQL），是一款知名的数据库系统，其特点是：轻量、简单、功能丰富。
 
-MySQL数据库可谓是软件行业的明星产品，无论是后端开发、大数据、AI、运维、测试等各类岗位，基本上都会和MySQL打交道。
+MySQL 数据库可谓是软件行业的明星产品，无论是后端开发、大数据、AI、运维、测试等各类岗位，基本上都会和 MySQL 打交道。
 
 ## 二、MySQL5.7 在 CentOS 中安装
 
 ==安装操作需要 root 权限==
 
-MySQL 并不在 CentOS 的官方仓库中，要通过 rpm 命令：
+1️⃣ MySQL 并不在 CentOS 的官方仓库中，要通过 rpm 命令：
 
 - 导入 MySQL 仓库的密钥；
 - 配置 MySQL 的 yum 仓库；
@@ -25,7 +25,7 @@ rpm -Uvh http://repo.mysql.com//mysql57-community-release-el7-7.noarch.rpm
 
 ![image-20221012182514865](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/12/20221012182514.png)
 
-使用 yum 安装 MySQL
+2️⃣ 使用 yum 安装 MySQL
 
 ```shell
 # yum安装Mysql
@@ -36,14 +36,14 @@ yum -y install mysql-community-server
 
 MySQL安装完成后，会自动配置为名称叫做：`mysqld` 的服务，可以被 systemctl 所管理
 
-启动 MySQL 服务，并配置开机自启动
+4️⃣ 启动 MySQL 服务，并配置开机自启动
 
 ```shell
 systemctl start mysqld # 启动
 systemctl enable mysqld # 开机自启
 ```
 
-检查 MySQL 的运行状态
+5️⃣ 检查 MySQL 的运行状态
 
 ```shell
 systemctl status mysqld
@@ -55,7 +55,7 @@ systemctl status mysqld
 
 主要配置管理员用户 root 的密码，以及配置允许远程登录的权限。
 
-获取MySQL的初始密码。
+1️⃣ 获取 MySQL 的初始密码。
 
 通过 grep 命令，在/var/log/mysqld.log 文件中，过滤 temporary password 关键字，得到初始密码
 
@@ -65,7 +65,7 @@ grep 'temporary password' /var/log/mysqld.log
 
 ![image-20221012182744115](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/12/20221012182744.png)
 
-登陆MySQL数据库系统
+2️⃣ 登陆MySQL数据库系统
 
 ```shell
 # 执行
@@ -80,7 +80,7 @@ mysql -uroot -p
 
 ![image-20221012182805966](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/12/20221012182806.png)
 
-修改root用户密码
+3️⃣ 修改 root 用户密码
 
 在 MySQL 控制台内执行 SQL 语句。
 
@@ -127,7 +127,7 @@ exit
 # 或者通过快捷键退出：ctrl + d
 ```
 
-检查端口
+4️⃣ 检查端口
 
 MySQL 默认绑定了 3306 端口，可以通过端口占用检查 MySQL 的网络状态。
 
@@ -143,11 +143,11 @@ netstat -anp | grep 3306
 
 ==注意：安装操作需要root权限==
 
-与 MySQL 5.0 相比，在 root 用户配置，和远程登录配置上有所不同。
+与 MySQL 5.7 相比，在 root 用户配置，和远程登录配置上有所不同。
 
 > `rpm` 是 Red Hat 包管理器，可以用于安装、卸载、升级、查询和验证软件包。
 
-配置 yum 仓库
+1️⃣ 配置 yum 仓库
 
 ```shell
 # 更新密钥
@@ -156,13 +156,17 @@ rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql
 
 打开 [http://dev.mysql.com/downloads/repo/yum/](https://link.zhihu.com/?target=http%3A//dev.mysql.com/downloads/repo/yum/)
 
-根据你的系统版本，选择对应的安装包，例如我的是 CentOS 7.9，这个发行版的 Linux 内核是 Linux 7，所以我选择了红框内的地址。
+根据你的系统版本，选择对应的安装包，
+
+例如我的系统发行版是 CentOS 7.9，这个发行版的 Linux 内核是 Linux 7，所以我选择了红框内的地址。
 
 ![rpm 安装包](https://pic1.zhimg.com/80/v2-c7386b38916fc9958490b651a93d0860_720w.jpg)
 
-安装 Mysql8.x 版本 yum 库。
+2️⃣ 安装 MySQL8.x 版本 yum 库。
 
 拿到安装包，在前面拼接 `http://dev.mysql.com/get/`
+
+然后使用 rpm，安装 MySQL 的 yum 库。
 
 ```shell
 rpm -Uvh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
@@ -174,9 +178,9 @@ rpm -Uvh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
 yum -y install mysql-community-server
 ```
 
-安装完成后，启动 MySQL 并配置开机自启动
+3️⃣ 安装完成后，启动 MySQL 并配置开机自启动
 
-MySQL安装完成后，会自动配置为名称叫做：`mysqld` 的服务，可以被 systemctl 所管理
+MySQL 安装完成后，会自动配置为名称叫做：`mysqld` 的服务，可以被 systemctl 所管理
 
 ```shell
 systemctl start mysqld« # 启动
@@ -191,16 +195,16 @@ systemctl status mysqld
 
 ## 五、MySQL 8.0 在 CentOS 中配置
 
-主要修改root密码和允许root远程登录
+主要修改 root 密码和允许 root 远程登录
 
-获取 MySQL 的初始密码
+1️⃣ 获取 MySQL 的初始密码
 
 ```shell
 # 通过 grep 命令，在 /var/log/mysqld.log 文件中，过滤 temporary password 关键字，得到初始密码
 grep 'temporary password' /var/log/mysqld.log
 ```
 
-登录MySQL数据库系统
+2️⃣ 登录 MySQL 数据库系统
 
 ```shell
 # 执行
@@ -213,13 +217,13 @@ mysql -uroot -p
 # 执行完毕后输入刚刚得到的初始密码，即可进入MySQL数据库
 ```
 
-修改 root 密码
+3️⃣ 修改 root 密码
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '密码'; -- 密码需要符合：大于8位，有大写字母，有特殊符号，不能是连续的简单语句如123，abc
 ```
 
-[扩展]，配置 root 的简单密码
+[扩展]：配置 root 的简单密码
 
 > 可以给 root 设置简单密码，如 123456.
 >
@@ -232,7 +236,7 @@ set global validate_password.policy=0; # 密码安全级别低
 set global validate_password.length=4; # 密码长度最低4位即可
 ```
 
-允许 root 远程登录，并设置远程登录密码
+[扩展]：允许 root 远程登录，并设置远程登录密码
 
 > 默认情况下，root 用户是不运行远程登录的，只允许在本地登陆 MySQL 系统。
 >
@@ -248,7 +252,7 @@ create user 'root'@'%' IDENTIFIED WITH mysql_native_password BY '密码!'; -- �
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '密码';
 ```
 
-退出MySQL控制台页面
+4️⃣ 退出MySQL控制台页面
 
 ```sql
 # 退出命令
@@ -257,7 +261,7 @@ exit
 # 或者通过快捷键退出：ctrl + d
 ```
 
-检查端口
+5️⃣ 检查端口
 
 MySQL 默认绑定了 3306 端口，可以通过端口占用检查 MySQL 的网络状态
 
@@ -375,27 +379,27 @@ root@DESKTOP-Q89USRE:~# which mysql_secure_installation
 
 ![image-20221016095458755](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095458.png)
 
-② 是否开启密码验证插件，如果需要增强密码安全性，输入`y`并回车，不需要直接回车（课程中选择直接回车）
+② 是否开启密码验证插件，如果需要增强密码安全性，输入`y`并回车，不需要直接回车（案例中中选择直接回车）
 
 ![image-20221016095537716](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095537.png)
 
-③ 是否更改root密码，需要输入`y`回车，不需要直接回车（课程不更改）
+③ 是否更改root密码，需要输入`y`回车，不需要直接回车（案例中不更改）
 
 ![image-20221016095621386](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095621.png)
 
-④ 是否移除匿名用户，移除输入`y`回车，不移除直接回车（课程选择移除）
+④ 是否移除匿名用户，移除输入`y`回车，不移除直接回车（案例中选择移除）
 
 ![image-20221016101232827](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101232.png)
 
-⑤ 是否进制 root 用户远程登录，禁止输入`y`回车，不禁止直接回车（课程选择不禁止）
+⑤ 是否进制 root 用户远程登录，禁止输入`y`回车，不禁止直接回车（案例中选择不禁止）
 
 ![image-20221016101324577](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101324.png)
 
-⑥ 是否移除自带的测试数据库，移除输入`y`回车，不移除直接回车（课程选择不移除）
+⑥ 是否移除自带的测试数据库，移除输入`y`回车，不移除直接回车（案例中选择不移除）
 
 ![image-20221016101404392](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101404.png)
 
-⑦ 是否刷新权限，刷新输入`y`回车，不刷新直接回车（课程选择刷新）
+⑦ 是否刷新权限，刷新输入`y`回车，不刷新直接回车（案例中选择刷新）
 
 ![image-20221016101442459](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101442.png)
 
@@ -421,13 +425,13 @@ mysql -uroot -p
 - 通过 sudo su -，切换到 root 用户。
 - 或在每一个命令前，加上 sudo，用来临时提升权限。
 
-1️⃣ 如果已经安装过MySQL5.7版本，需要卸载仓库信息哦
+1️⃣ 如果已经安装过 MySQL5.7 版本，需要卸载仓库信息
 
 ```shell
-# 卸载MySQL5.7版本
+# 卸载 MySQL5.7 版本
 apt remove -y mysql-client=5.7* mysql-community-server=5.7*
 
-# 卸载5.7的仓库信息
+# 卸载 MySQL5.7 的仓库信息
 dpkg -l | grep mysql | awk '{print $2}' | xargs dpkg -P
 ```
 
@@ -451,7 +455,7 @@ apt install -y mysql-server
 /etc/init.d/mysql status # 查看状态
 ```
 
-5️⃣ 登陆 MySQL 设置密码
+5️⃣ 登陆 MySQL
 
 ```shell
 # 直接执行：mysql
@@ -475,9 +479,10 @@ exit
 8️⃣ 对 MySQL 进行初始化
 
 ```shell
-# 执行如下命令，此命令是MySQL安装后自带的配置程序
+# 执行如下命令，此命令是 MySQL 安装后自带的配置程序
 mysql_secure_installation
-# 可以通过which命令查看到这个自带程序所在的位置
+
+# 可以通过 which 命令查看到这个自带程序所在的位置
 root@DESKTOP-Q89USRE:~# which mysql_secure_installation
 /usr/bin/mysql_secure_installation
 ```
@@ -486,27 +491,27 @@ root@DESKTOP-Q89USRE:~# which mysql_secure_installation
 
 ![image-20221016095458755](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095458.png)
 
-② 是否开启密码验证插件，如果需要增强密码安全性，输入`y`并回车，不需要直接回车（课程中选择直接回车）
+② 是否开启密码验证插件，如果需要增强密码安全性，输入`y`并回车，不需要直接回车（案例中选择直接回车）
 
 ![image-20221016095537716](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095537.png)
 
-③ 是否更改root密码，需要输入`y`回车，不需要直接回车（课程不更改）
+③ 是否更改 root 密码，需要输入 `y` 回车，不需要直接回车（案例中不更改）
 
 ![image-20221016095621386](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095621.png)
 
-④ 是否移除匿名用户，移除输入`y`回车，不移除直接回车（课程选择移除）
+④ 是否移除匿名用户，移除输入`y`回车，不移除直接回车（案例中选择移除）
 
 ![image-20221016101232827](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101232.png)
 
-⑤ 是否进制root用户远程登录，禁止输入`y`回车，不禁止直接回车（课程选择不禁止）
+⑤ 是否进制 root 用户远程登录，禁止输入`y`回车，不禁止直接回车（案例中选择不禁止）
 
 ![image-20221016101324577](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101324.png)
 
-⑥ 是否移除自带的测试数据库，移除输入`y`回车，不移除直接回车（课程选择不移除）
+⑥ 是否移除自带的测试数据库，移除输入`y`回车，不移除直接回车（案例中选择不移除）
 
 ![image-20221016101404392](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101404.png)
 
-⑦ 是否刷新权限，刷新输入`y`回车，不刷新直接回车（课程选择刷新）
+⑦ 是否刷新权限，刷新输入`y`回车，不刷新直接回车（案例中选择刷新）
 
 ![image-20221016101442459](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101442.png)
 
