@@ -416,7 +416,7 @@ mysql -uroot -p
 
 ## 七、MySQL8.0 在 Ubuntu 中安装
 
-> WSL 环境是最新的 Ubuntu22.xx 版本，这个版本的软件商店内置的 MySQL 是 8.0 版本
+> WSL 环境是最新的 Ubuntu22.04 版本，这个版本的软件商店内置的 MySQL 是 8.0 版本
 >
 > 所以直接通过 apt 命令安装即可。
 
