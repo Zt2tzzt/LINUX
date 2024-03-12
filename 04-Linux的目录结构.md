@@ -32,7 +32,7 @@ Linux 没有盘符这个概念, 只有一个根目录 /，所有文件都在它�
 
 请根据语言描述，写出对应的 Linux 路径：
 
-在根目录下有一个文件夹 test，文件夹内有一个文件 hello.txt，请描述文件的路径
+在根目录下有一个文件夹 test，该文件夹内有一个文件 hello.txt，请描述文件的路径
 
 `/test/hello.txt`
 
@@ -40,6 +40,6 @@ Linux 没有盘符这个概念, 只有一个根目录 /，所有文件都在它�
 
 `/test.txt`
 
-在根目录下有一个文件夹 zetian，下面有文件夹 haha，下面有文件 test.txt，请描述文件的路径
+在根目录下有一个文件夹 zetian，该文件夹下有文件夹 haha，该文件夹下有文件 test.txt，请描述文件的路径
 
 `/zetian/haha/test.txt`

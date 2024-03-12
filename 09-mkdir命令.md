@@ -1,6 +1,6 @@
 # mkdir 命令
 
-mkdir 命令用于创建新的目录（文件夹）
+`mkdir` 命令用于创建新的目录（文件夹）
 
 mkdir来自英文：Make Directory
 
