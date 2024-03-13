@@ -73,7 +73,7 @@ git --version
 
 以上命令将回显你安装的 `git` 版本，类似于：
 
-```
+```txt
 git version 2.25.1
 ```
 
