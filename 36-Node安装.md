@@ -1,6 +1,5 @@
 # Node 安装
 
-
 在 Windows Subsystem for Linux (WSL) 的 Ubuntu 环境中安装 `n` 工具和在标准 Ubuntu 环境下的步骤基本相同。以下是具体步骤：
 
 ① 打开 WSL 及其 Ubuntu 终端。
@@ -45,4 +44,3 @@ sudo npm install -g n
 ```shell
 apt remove npm
 ```
-
