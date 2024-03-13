@@ -1,4 +1,6 @@
-# Node 安装
+# Node、Git 安装
+
+## 一、Node 安装
 
 在 Windows Subsystem for Linux (WSL) 的 Ubuntu 环境中安装 `n` 工具和在标准 Ubuntu 环境下的步骤基本相同。以下是具体步骤：
 
@@ -44,3 +46,37 @@ sudo npm install -g n
 ```shell
 apt remove npm
 ```
+
+## 二、Git 安装
+
+在 Ubuntu 中安装 `git` 可以通过在终端运行几个简单命令来完成：
+
+① 首先，打开您的终端。
+
+② 使用 `apt` 来更新你的包源列表，这样可以确保你接下来安装的是最新版的 `git`：
+
+```bash
+sudo apt update
+```
+
+③ 接着运行以下命令安装 `git`：
+
+```bash
+sudo apt install git
+```
+
+④ 安装完成后，可以检查 `git` 是否成功安装，以及它的版本。通过下列命令查看版本：
+
+```bash
+git --version
+```
+
+以上命令将回显你安装的 `git` 版本，类似于：
+
+```
+git version 2.25.1
+```
+
+即表示你已经成功地在你的 Ubuntu 中安装了 `git`。
+
+请注意，这些命令需要管理员权限才能运行，因此你需要使用 `sudo` 来获取必要的权限。
