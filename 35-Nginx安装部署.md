@@ -10,6 +10,8 @@ Nginx 在 WEB 开发领域，基本上也是必备组件之一了。
 
 ## 二、Nginx 安装
 
+### 1.CentOS 安装
+
 Nginx 同样需要配置额外的 yum 仓库，才可以使用 yum 安装
 
 > 安装 Nginx 的操作需要 root 身份
@@ -95,3 +97,67 @@ firewall-cmd --reload # 重新加载防火墙规则
 至此，Nginx 安装配置完成。
 
 ![image-20221018143113053](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/18/20221018143113.png)
+
+### 2.Ubuntu 安装
+
+在 Ubuntu 系统中，可以通过以下步骤来安装 `nginx`：
+
+① 打开一个终端窗口
+
+② 首先，更新你的包索引以使其获取到最新的关于软件和他们版本的信息：
+
+bash
+
+复制代码
+
+```bash
+sudo apt update
+```
+
+③ 接着，安装 `nginx`：
+
+bash
+
+复制代码在 Ubuntu 系统中，可以通过以下步骤来安装 `nginx`：
+
+④ 打开一个终端窗口。
+
+⑤ 首先，更新你的包索引以使其获取到最新的关于软件和他们版本的信息：
+
+```bash
+sudo apt update
+```
+
+⑥ 接着，安装 `nginx`：复制代码
+
+```bash
+sudo apt install nginx
+```
+
+⑦ 安装 `nginx` 之后，它应该会被自动启动。你可以通过如下命令来确认 `nginx` 是否正在运行：复制代码
+
+```bash
+systemctl status nginx
+```
+
+如果 `nginx` 成功运行，你应该能看到 `active (running)` 在输出的文本中。
+
+⑧ 现在你可以在你的浏览器中输入 [http://localhost](http://localhost/) 或 http://your_server_IP，你应该能看到欢迎页面，表示 `nginx` 已经成功安装并正在运行。
+
+需要注意的是，由于这些操作涉及到了改动系统的软件配置，因此需要管理员权限，所以你可能需要使用 `sudo` 来运行这些命令。
+
+```bash
+sudo apt install nginx
+```
+
+⑨ 安装 `nginx` 之后，它应该会被自动启动。你可以通过如下命令来确认 `nginx` 是否正在运行：复制代码
+
+```bash
+systemctl status nginx
+```
+
+如果 `nginx` 成功运行，你应该能看到 `active (running)` 在输出的文本中。
+
+⑩ 现在你可以在你的浏览器中输入 [http://localhost](http://localhost/) 或 http://your_server_IP，你应该能看到欢迎页面，表示 `nginx` 已经成功安装并正在运行。
+
+需要注意的是，由于这些操作涉及到了改动系统的软件配置，因此需要管理员权限，所以你可能需要使用 `sudo` 来运行这些命令。
