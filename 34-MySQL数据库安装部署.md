@@ -273,7 +273,7 @@ netstat -anp | grep 3306
 
 至此，MySQL就安装完成并可用了，请妥善保存好 MySQL 的 root 密码。
 
-## 六、MySQL5.7 在 Ubuntu 中安装
+## 六、MySQL5.7 在 Ubuntu 中安装和配置
 
 > WSL 环境是最新的 Ubuntu22.04 版本，这个版本的软件商店内置的 MySQL 是 8.0 版本
 >
@@ -414,7 +414,7 @@ mysql -uroot -p
 
 至此，在 Ubuntu 上安装 MySQL5.7 版本成功。
 
-## 七、MySQL8.0 在 Ubuntu 中安装
+## 七、MySQL8.0 在 Ubuntu 中安装和配置
 
 > WSL 环境是最新的 Ubuntu22.04 版本，这个版本的软件商店内置的 MySQL 是 8.0 版本
 >
@@ -462,9 +462,7 @@ apt install -y mysql-server
 mysql
 ```
 
-6️⃣ 设置密码
-
-执行 SQL：
+6️⃣ 设置密码，执行 SQL：
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
@@ -503,7 +501,7 @@ root@DESKTOP-Q89USRE:~# which mysql_secure_installation
 
 ![image-20221016101232827](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101232.png)
 
-⑤ 是否进制 root 用户远程登录，禁止输入`y`回车，不禁止直接回车（案例中选择不禁止）
+⑤ 是否禁止 root 用户远程登录，禁止输入`y`回车，不禁止直接回车（案例中选择不禁止）
 
 ![image-20221016101324577](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101324.png)
 
