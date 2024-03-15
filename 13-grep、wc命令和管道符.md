@@ -7,17 +7,17 @@
 语法：`grep [-n] "关键字" 文件路径`
 
 - `-n` 选项，可选，表示在结果中显示匹配的行的行号。
-- `"关键字"`，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来。
+- `"关键字"`，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用双引号（””）将关键字包围起来。
 - `文件路径`，必填，表示要过滤内容的文件的路径，可作为内容输入端口。
 
 现在，通过 touch 命令在 ZeTianShop 目录创建文件 zetian.txt，然后使用图形化界面编辑并保存如下内容：
 
 ```txt
-zetian is a staff of kkcf
+zetian is a employee of kkcf
 kkcf full name is KunKunChickenFarm
 ```
 
-在 zetian.txt 中，过滤 zetian 关键字
+在 zetian.txt 中，过滤 “zetian” 关键字
 
 ```shell
 grep "zetian" zetian.txt
@@ -28,7 +28,7 @@ grep "zetian" zetian.txt
 zetian is a employee of kkcf
 ```
 
-在 zetian.txt 中，过滤 kkcf 关键字
+在 zetian.txt 中，过滤 “kkcf” 关键字
 
 ```shell
 grep "kkcf" zetian.txt
@@ -40,7 +40,7 @@ zetian is a employee of kkcf
 kkcf full name is KunKunChickenFarm
 ```
 
-在 zetian.txt 中，过滤 full 关键字，并显示行号
+在 zetian.txt 中，过滤 “full” 关键字，并显示行号
 
 ```shell
 grep -n "full" zetian.txt
@@ -53,7 +53,7 @@ grep -n "full" zetian.txt
 
 ## 二、wc 命令
 
-通过 wc 命令统计文件的行数、单词数量，字节数，字符数等.
+通过 `wc` 命令统计文件的行数、单词数量，字节数，字符数等.
 
 语法：`wc [-c -m -l -w] 文件路径`
 
