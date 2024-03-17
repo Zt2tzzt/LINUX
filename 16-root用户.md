@@ -45,7 +45,7 @@ su 命令，来源英文单词：Switch User，可用于从普通用户切换到
 
 并不是所有的用户，都有权利使用 sudo，我们需要为普通用户，配置 sudo 认证。
 
-切换到 root 用户，执行 `visudo` 命令，会自动通过 vi 编辑器打开：/etc/sudoers
+切换到 root 用户，执行 `visudo` 命令，会自动通过 vi 编辑器打开 sudo 的配置文件：/etc/sudoers
 
 ```shell
 visudo

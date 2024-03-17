@@ -2,7 +2,7 @@
 
 ## 一、Nginx 介绍
 
-_Nginx_ (engine x) 是一个高性能的 HTTP 和反向代理 web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。
+_Nginx_ 是一个高性能的 HTTP 和反向代理 web 服务器，同时也提供了 IMAP/POP3/SMTP 服务。
 
 同 Tomcat 一样，Nginx 可以托管用户编写的 WEB 应用程序成为可访问的网页服务；同时也可以作为流量代理服务器，控制流量的中转。
 
