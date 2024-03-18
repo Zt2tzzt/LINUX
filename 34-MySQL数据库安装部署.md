@@ -455,6 +455,22 @@ apt install -y mysql-server
 /etc/init.d/mysql status # 查看状态
 ```
 
+在 WSL 的 Ubuntu 中，启动 MySQL 时，可能会报错。原因是 MySQL 的日志文件夹无权访问，执行下方命令。
+
+```shell
+sudo usermod -d /var/lib/mysql/ mysql
+```
+
+再次启动，会返现，还是有一个报错：`-sh: 28: export: Files/Git/mingw64/bin: bad variable name`
+
+在 `/etc/profile` 文件中，修改 WSL 自动配置的环境变量，加入双引号（""）包裹，取消其中空格的影响（Windows 的空格是真的坑啊！）。
+
+```shell
+export PATH="$PATH:'/mnt/c/Program Files/Git/mingw64/bin'"
+```
+
+重新开启一个终端，使环境变量生效。
+
 5️⃣ 登陆 MySQL
 
 ```shell
@@ -497,7 +513,7 @@ root@DESKTOP-Q89USRE:~# which mysql_secure_installation
 
 ![image-20221016095621386](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016095621.png)
 
-④ 是否移除匿名用户，移除输入`y`回车，不移除直接回车（案例中选择移除）
+④ 是否移除匿名用户，移除输入`y`回车，不移除直接回车（案例中选择输入 y 移除）
 
 ![image-20221016101232827](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016101232.png)
 
