@@ -1,5 +1,7 @@
 # systemctl 控制软件启动和关闭
 
+`systemd` 是 Linux 系统的一种初始化系统（init system），也是一种服务管理框架。许多 Linux 发行版都采用了 `systemd`，并使用 `systemctl` 命令来管理系统服务。
+
 Linux 系统很多软件（内置或第三方）均支持使用 systemctl 命令管理软件服务的启动、停止、开机自启等等状态。
 
 systemctl 命令能够管理的软件，一般也称之为：服务
@@ -127,3 +129,29 @@ Hint: Some lines were ellipsized, use -l to show in full.
 > 安装的第三方软件，只要能自行在系统中注册服务的，就可以使用 systemctl 管理。
 >
 > 事实上，部分软件安装后，没有自动在系统中注册服务，需要手动注册后，才能使用 systemctl 管理。
+
+## 三、WSL 中的替代方案
+
+WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
+
+目前，解决这个问题有下面一些流行的方法：
+
+① **直接使用对应的服务命令来管理服务**
+
+比如对于 MySQL，你可以使用 `service` 命令来启动和停止服务，而不是 `systemctl`：
+
+```bash
+sudo service mysql start
+sudo service mysql stop
+sudo service mysql status
+```
+
+② **使用第三方工具**
+
+有一些第三方工具，如 genie，可以在 WSL 中启用 `systemd`。安装并使用这些工具后，你就可以在 WSL 中使用 `systemctl` 命令了。然而，这些工具可能需要你进行一些复杂的配置，而且可能引发其他的问题。
+
+③ **使用 WSL 2 并手动启动 systemd**
+
+如果你正在使用 WSL 2，你可以通过在每次用户登录时在 .bashrc 中手动运行 systemd 的方式来解决这个问题。然而，这种方法可能会导致一些预期之外的问题，所以虽然它可以工作，但并不推荐使用。
+
+总的来说，如果你只是需要管理服务，那么最推荐的方式是直接使用 `service` 命令，这是最简单，也是最不容易出问题的方法。
