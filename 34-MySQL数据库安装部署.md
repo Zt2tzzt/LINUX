@@ -466,7 +466,7 @@ sudo usermod -d /var/lib/mysql/ mysql
 在 `/etc/profile` 文件中，修改 WSL 自动配置的环境变量，加入双引号（""）包裹，取消其中空格的影响（Windows 的空格是真的坑啊！）。
 
 ```shell
-export PATH="$PATH:'/mnt/c/Program Files/Git/mingw64/bin'"
+export PATH=$PATH:"/mnt/c/Program Files/Git/mingw64/bin"
 ```
 
 重新开启一个终端，使环境变量生效。

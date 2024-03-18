@@ -1,5 +1,7 @@
 # systemctl 控制软件启动和关闭
 
+`systemd` 是 Linux 系统的一种初始化系统（init system），也是一种服务管理框架。许多 Linux 发行版都采用了 `systemd`，并使用 `systemctl` 命令来管理系统服务。
+
 Linux 系统很多软件（内置或第三方）均支持使用 systemctl 命令管理软件服务的启动、停止、开机自启等等状态。
 
 systemctl 命令能够管理的软件，一般也称之为：服务
@@ -130,15 +132,13 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 ## 三、WSL 中的替代方案
 
-WSL 并没有使用 `systemd` 来管理系统服务。
-
-`systemd` 是 Linux 系统的一种初始化系统（init system），也是一种服务管理框架。许多 Linux 发行版都采用了 `systemd`，并使用 `systemctl` 命令来管理系统服务。然而，WSL 由于其特殊性并不使用 `systemd`。
+WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
 
 目前，解决这个问题有下面一些流行的方法：
 
 ① **直接使用对应的服务命令来管理服务**
 
-对于 MySQL，你可以使用 `service` 命令来启动和停止服务，而不是 `systemctl`：
+比如对于 MySQL，你可以使用 `service` 命令来启动和停止服务，而不是 `systemctl`：
 
 ```bash
 sudo service mysql start
