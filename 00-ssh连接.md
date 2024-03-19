@@ -48,6 +48,10 @@ ssh-keygen -t ed25519 -C "注释，通常是邮箱"
 
 通过输入以下命令，您可以更改现有私钥的密码而无需重新生成密钥对：
 
+```shell
+ssh-keygen -p -f ~/.ssh/id_ed25519
+```
+
 ```she;;
 $ ssh-keygen -p -f ~/.ssh/id_ed25519
 > Enter old passphrase: [Type old passphrase]
