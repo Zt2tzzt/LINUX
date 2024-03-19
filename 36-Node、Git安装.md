@@ -44,7 +44,7 @@ sudo npm install -g n
 在安装完成后，使用 apt 卸载之前安装的 npm
 
 ```shell
-apt remove npm
+sudo apt remove npm
 ```
 
 ## 二、Git 安装
