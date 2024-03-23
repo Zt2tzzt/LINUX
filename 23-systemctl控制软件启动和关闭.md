@@ -14,7 +14,68 @@ systemctl 命令能够管理的软件，一般也称之为：服务
 - `enable`，表示开启开机启动。
 - `disable`，表示关闭开机启动。
 
-系统内置的服务比较多，比如：
+## 一、systemctl 命令和 service 命令
+
+在 Linux 系统中，systemctl 命令和 service 命令有什么相似之处和不同之处？它们的适用场景分别是什么？
+
+相似之处：
+
+1. **管理服务**：`systemctl` 命令和 `service` 命令都用于管理系统服务。
+2. **启动服务**：两者都可以用来启动特定服务。
+3. **停止服务**：都可以用来停止特定服务。
+4. **重启服务**：两者都可以用来重新启动特定服务。
+5. **查看服务状态**：都可以查看当前正在运行的服务的状态。
+
+不同之处：
+
+1. **系统支持**：`systemctl`命令通常用于最新的`systemd`初始化系统，而`service`命令是传统`SysV`初始化系统中使用的命令。
+2. **功能丰富性**：`systemctl`提供了更多功能，例如可以控制系统引导和管理系统单元等。
+3. **语法**：`systemctl`命令的语法比`service`命令更为一致和简单。
+4. **可读性**：`systemctl`输出信息更加易于阅读和理解。
+
+适用场景：
+
+- **`systemctl`适用场景**：
+  - 用于`systemd`初始化系统的Linux发行版，如CentOS 7、Ubuntu 16.04及更高版本等。
+  - 适用于管理系统服务、查看和控制单元的状态等。
+  - 更加强大且现代的服务管理工具，提供更多的功能和选项。
+- **`service`适用场景**：
+  - 在传统的`SysV`初始化系统中，如Ubuntu 14.04及更低版本等。
+  - 用于基本的服务管理，如启动、停止和重新启动服务。
+  - 更适合于旧版本的Linux系统或仍在使用`SysV`初始化系统的服务器环境。
+
+总的来说，`systemctl`是更现代、功能更丰富、更易用的服务管理工具，而`service`则是更传统、简单的服务管理命令。根据您的Linux发行版和初始化系统，您可以选择适合您环境的命令来管理和控制服务。
+
+systemctl 命令和 service 命令常用命令分别有哪些？
+
+`systemctl` 常用命令：
+
+1. **启动服务**：`systemctl start <service>`
+2. **停止服务**：`systemctl stop <service>`
+3. **重新启动服务**：`systemctl restart <service>`
+4. **查看服务状态**：`systemctl status <service>`
+5. **启用开机自启**：`systemctl enable <service>`
+6. **禁用开机自启**：`systemctl disable <service>`
+7. **查看所有正在运行的服务**：`systemctl list-units --type=service`
+8. **查看特定服务的配置文件**：`systemctl cat <service>`
+9. **查看服务的日志**：`journalctl -u <service>`
+10. **查看启动失败的服务**：`systemctl --failed`
+
+`service` 常用命令：
+
+1. **启动服务**：`service <service> start`
+2. **停止服务**：`service <service> stop`
+3. **重新启动服务**：`service <service> restart`
+4. **查看服务状态**：`service <service> status`
+5. **启用开机自启**：`chkconfig <service> on`
+6. **禁用开机自启**：`chkconfig <service> off`
+7. **查看开机启动状态**：`chkconfig --list`
+
+`systemctl`提供了更加一致和直观的命令语法，而`service`更侧重于传统`SysV`初始化系统的命令风格。根据您的系统使用`systemd`还是`SysV`初始化系统，选择适合的命令进行服务管理。
+
+## 二、系统软件服务
+
+Linux 系统有很多内置的服务，比如：
 
 - NetworkManager，主网络服务。
 - network，副网络服务。
@@ -22,8 +83,6 @@ systemctl 命令能够管理的软件，一般也称之为：服务
 - sshd，ssh 服务（FinalShell 远程登录 Linux 使用的就是这个服务）。
 
 > d 是 daemon，表示进程。
-
-## 一、系统软件服务
 
 使用 `systemctl` 命令，开启 firewalld 服务。
 
@@ -51,7 +110,7 @@ systemctl status firewalld
      Docs: man:firewalld(1)
 ```
 
-## 二、第三方软件服务
+## 三、第三方软件服务
 
 除了系统内置的服务以外，部分第三方软件安装后，自行在系统中注册了服务，也可以用 systemctl 进行控制。
 
@@ -130,7 +189,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 >
 > 事实上，部分软件安装后，没有自动在系统中注册服务，需要手动注册后，才能使用 systemctl 管理。
 
-## 三、WSL 中的替代方案
+## 四、WSL 中的替代方案
 
 WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
 
