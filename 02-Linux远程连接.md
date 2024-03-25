@@ -17,7 +17,7 @@ Linux 从诞生至今，在图形化页面的优化上，并未重点发力。�
 
 ## 三、FinalShell 远程连接 Linux
 
-再[FinalShell 官网](https://www.hostbuf.com)进行下载
+在 [FinalShell 官网](https://www.hostbuf.com)进行下载
 
 打开 Finshell 软件，配置远程 Linux 系统的连接。
 

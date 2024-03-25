@@ -16,7 +16,7 @@ systemctl status sshd
 
 ## 一、ssh 密码连接
 
-连接客户端
+连接客户端：
 
 语法：`ssh 用户名@主机`
 
@@ -104,6 +104,8 @@ Host ZetianDeCentOS7
 
 ```shell
 ssh ZetianDeCentOS7
+
+# 代替了 ssh root@66.66.66.66 的连接方式
 ```
 
 ### 6.ssh-agent 管理 passphrase
