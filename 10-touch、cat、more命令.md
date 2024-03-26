@@ -31,10 +31,10 @@ hahah, hello, word, abaaba
 
 ## 三、more 命令查看文件内容
 
-more 命令同样可以查看文件内容，与 cat 不同的是：
+more 命令同样可以查看文件内容，与 cat 不同的是：more 支持翻页，如果文件内容过多，可以一页一页的展示。
 
-- cat 是直接将内容全部显示出来。
-- more 支持翻页，如果文件内容过多，可以一页一页的展示。
+- 使用空格翻页。
+- 使用 q 键退出查看。
 
 语法：`more Linux路径`
 
@@ -42,7 +42,6 @@ more 命令同样可以查看文件内容，与 cat 不同的是：
 
 查看 /etc/services 文件
 
-`more /etc/services`
-
-- 使用空格翻页。
-- 使用 q 键退出查看。
+```shell
+more /etc/services
+```
