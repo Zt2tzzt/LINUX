@@ -538,3 +538,27 @@ mysql -uroot -p
 ![image-20221016110414182](https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/16/20221016110414.png)
 
 至此，在 Ubuntu 上安装 MySQL8.0 版本成功。
+
+### 1.root 用户远程访问
+
+修改文件 /etc/mysql/mysql.conf.d/mysqld.cnf 中的配置
+
+```txt
+bind-address            = 0.0.0.0
+```
+
+修改 mysql 库中的 user 表， 将 rout 用户的 host 字段改为 `%`。
+
+### 2.root 用户修改密码
+
+如果要修改 MySQL 数据库 root 用户的密码，执行如下 sql 语句操作：
+
+```shell
+use mysql;
+
+ALTER USER 'root'@'%' IDENTIFIED WITH caching_sha2_password BY '新密码';
+
+flush privileges;
+```
+
+`%` 表示所有 ip 都可以连接，如果只想让 root 用户进行本地连接，使用 `localhost`
