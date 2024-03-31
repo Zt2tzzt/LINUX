@@ -6,7 +6,7 @@ echo 命令，用于在命令行内输出指定内容。
 
 语法：`echo 输出的内容`
 
-无需选项，只有一个参数，表示要输出的内容，复杂内容（带有空格或 \ 等特殊符号），建议使用双引号（""）包围，不然会影响命令的执行。
+无需选项，只有一个参数，表示要输出的内容，复杂内容（带有空格或"/"等等特殊符号），建议使用双引号（""）包围，不然会影响命令的执行。
 
 在终端上显示：Hello Linux
 
@@ -36,11 +36,10 @@ echo `pwd`
 
 重定向符：`>` 和 `>>`
 
-`>`，将左侧命令的结果，**覆盖**写入到符号右侧指定的文件中。
+- `>`，表示将左侧命令的结果，**覆盖**写入到符号右侧指定的文件中。
+- `>>`，表示将左侧命令的结果，**追加**写入到符号右侧指定的文件中。
 
-`>>`，将左侧命令的结果，**追加**写入到符号右侧指定的文件中。
-
-将 "Hello Linux" 写入到当前工作目录的 zetian.txt 中，并覆盖其中的内容。
+将 "Hello Linux" 写入到当前工作目录的 zetian.txt 文件中，并覆盖其中的内容。
 
 ```shell
 echo "Hello Linux" > zetian.txt
@@ -52,7 +51,7 @@ echo "Hello Linux" > zetian.txt
 Hello Linux
 ```
 
-将 "Hello KunKunChickenFarm" 写入到当前工作目录的 zetian.txt 中，并追加在最后面。
+将 "Hello KunKunChickenFarm" 写入到当前工作目录的 zetian.txt 文件中，并追加在最后面。
 
 ```shell
 echo "Hello KunKunChickenFarm" >> zetian.txt
@@ -90,7 +89,7 @@ tail 命令，用于查看文件尾部内容，跟踪文件的最新更改，
 语法：`tail [-f -<num>] Linux路径`
 
 - `-f` 选项，可选，表示持续跟踪。
-- `-<num>` 选项，可选，表示查看尾部多少行，不填默认 10 行。
+- `-<num>` 选项，可选，表示查看尾部多少行，不选默认 10 行。
 - `Linux路径`，参数，表示被跟踪的文件路径。
 
 查看 /var/log/ecs_network_optimization.log 文件的尾部 10 行：
