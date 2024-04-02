@@ -191,7 +191,13 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 ## 四、WSL 中的替代方案
 
-WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
+最新版的 WSL 已经支持 `systemd` 服务，将 WSL 升级为最新的版本。
+
+```shell
+wsl --update
+```
+
+有些老版本的 WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
 
 目前，解决这个问题有下面一些流行的方法：
 
