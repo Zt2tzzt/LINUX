@@ -15,8 +15,8 @@ chown 命令，可以修改文件、文件夹的所属用户和用户组。
 
 `chown root abc.txt` 命令，用于将 abc.txt 文件的所属用户修改为 root。
 
-`chown :root abc.txt` 命令，将 abc.txt 文件的所属用户组修改为 root
+`chown :root abc.txt` 命令，将 abc.txt 文件的所属用户组修改为 root。
 
-`chown root:kkcf abc.txt` 命令，用于将 abc.txt 所属用户修改为 root，用户组修改为 kkcf
+`chown root:kkcf abc.txt` 命令，用于将 abc.txt 所属用户修改为 root，用户组修改为 kkcf。
 
-`chown -R root test` 命令，用于将文件夹 test 的所属用户修改为 root，并对文件夹内全部内容应用同样规则
+`chown -R root test` 命令，用于将文件夹 test 的所属用户修改为 root，并对文件夹内全部内容应用同样规则。

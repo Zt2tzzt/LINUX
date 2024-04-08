@@ -1,10 +1,10 @@
 # systemctl 控制软件启动和关闭
 
-`systemd` 是 Linux 系统的一种初始化系统（init system），也是一种服务管理框架。许多 Linux 发行版都采用了 `systemd`，并使用 `systemctl` 命令来管理系统服务。
+`systemd` 是 Linux 系统的一种初始化系统（init system），也是一种服务管理框架。
 
-Linux 系统很多软件（内置或第三方）均支持使用 systemctl 命令管理软件服务的启动、停止、开机自启等等状态。
+许多 Linux 发行版都采用了 `systemd`，并使用其中的 `systemctl` 命令来管理系统服务。很多第三方软件，也支持使用 `systemctl` 命令，管理软件服务的启动、停止、开机自启等等状态。
 
-systemctl 命令能够管理的软件，一般也称之为：服务
+`systemctl` 命令能够管理的软件，一般也称之为：服务。
 
 语法：`systemctl start | stop | status | enable | disable 服务名`
 
@@ -16,7 +16,7 @@ systemctl 命令能够管理的软件，一般也称之为：服务
 
 ## 一、systemctl 命令和 service 命令
 
-在 Linux 系统中，systemctl 命令和 service 命令有什么相似之处和不同之处？它们的适用场景分别是什么？
+在 Linux 系统中，`systemctl` 命令和 `service` 命令的
 
 相似之处：
 
@@ -28,23 +28,23 @@ systemctl 命令能够管理的软件，一般也称之为：服务
 
 不同之处：
 
-1. **系统支持**：`systemctl`命令通常用于最新的`systemd`初始化系统，而`service`命令是传统`SysV`初始化系统中使用的命令。
-2. **功能丰富性**：`systemctl`提供了更多功能，例如可以控制系统引导和管理系统单元等。
-3. **语法**：`systemctl`命令的语法比`service`命令更为一致和简单。
-4. **可读性**：`systemctl`输出信息更加易于阅读和理解。
+1. **系统支持**：`systemctl` 命令通常用于最新的 `systemd` 初始化系统，而 `service` 命令是传统 `SysV` 初始化系统中使用的命令。
+2. **功能丰富性**：`systemctl` 提供了更多功能，例如可以控制系统引导和管理系统单元等。
+3. **语法**：`systemctl` 命令的语法比 `service` 命令更为一致和简单。
+4. **可读性**：`systemctl` 输出信息更加易于阅读和理解。
 
 适用场景：
 
-- **`systemctl`适用场景**：
-  - 用于`systemd`初始化系统的Linux发行版，如CentOS 7、Ubuntu 16.04及更高版本等。
+- **`systemctl` 适用场景**：
+  - 用于 `systemd` 初始化系统的 Linux 发行版，如 CentOS 7、Ubuntu 16.04 及更高版本等。
   - 适用于管理系统服务、查看和控制单元的状态等。
   - 更加强大且现代的服务管理工具，提供更多的功能和选项。
-- **`service`适用场景**：
-  - 在传统的`SysV`初始化系统中，如Ubuntu 14.04及更低版本等。
+- **`service` 适用场景**：
+  - 在传统的 `SysV` 初始化系统中，如 Ubuntu 14.04 及更低版本等。
   - 用于基本的服务管理，如启动、停止和重新启动服务。
-  - 更适合于旧版本的Linux系统或仍在使用`SysV`初始化系统的服务器环境。
+  - 更适合于旧版本的 Linux 系统或仍在使用 `SysV` 初始化系统的服务器环境。
 
-总的来说，`systemctl`是更现代、功能更丰富、更易用的服务管理工具，而`service`则是更传统、简单的服务管理命令。根据您的Linux发行版和初始化系统，您可以选择适合您环境的命令来管理和控制服务。
+总的来说，`systemctl` 是更现代、功能更丰富、更易用的服务管理工具，而 `service` 则是更传统、简单的服务管理命令。根据您的Linux 发行版和初始化系统，您可以选择适合您环境的命令来管理和控制服务。
 
 systemctl 命令和 service 命令常用命令分别有哪些？
 
@@ -71,7 +71,7 @@ systemctl 命令和 service 命令常用命令分别有哪些？
 6. **禁用开机自启**：`chkconfig <service> off`
 7. **查看开机启动状态**：`chkconfig --list`
 
-`systemctl`提供了更加一致和直观的命令语法，而`service`更侧重于传统`SysV`初始化系统的命令风格。根据您的系统使用`systemd`还是`SysV`初始化系统，选择适合的命令进行服务管理。
+`systemctl` 提供了更加一致和直观的命令语法，而`service`更侧重于传统 `SysV` 初始化系统的命令风格。根据您的系统使用 `systemd` 还是 `SysV` 初始化系统，选择适合的命令进行服务管理。
 
 ## 二、系统软件服务
 
@@ -116,7 +116,7 @@ systemctl status firewalld
 
 比如 ntp 软件的 ntpd 服务
 
-安装 ntp 软件
+安装 ntp 软件：
 
 ```shell
 yum -y install ntp
@@ -191,17 +191,19 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 ## 四、WSL 中的替代方案
 
-最新版的 WSL 已经支持 `systemd` 服务，将 WSL 升级为最新的版本。
+有些老版本的 WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
+
+目前，解决这个问题有下面一些流行的方法：
+
+① **升级到 WSL 2 并手动启动 systemd**
+
+最新版的 WSL 2 已经支持 `systemd` 服务，将 WSL 升级为最新的版本。
 
 ```shell
 wsl --update
 ```
 
-有些老版本的 WSL 由于其特殊性并不使用 `systemd`。所以也没有使用 `systemd` 来管理系统服务。
-
-目前，解决这个问题有下面一些流行的方法：
-
-① **直接使用对应的服务命令来管理服务**
+① **直接使用 service 命令来管理服务**
 
 比如对于 MySQL，你可以使用 `service` 命令来启动和停止服务，而不是 `systemctl`：
 
@@ -210,13 +212,3 @@ sudo service mysql start
 sudo service mysql stop
 sudo service mysql status
 ```
-
-② **使用第三方工具**
-
-有一些第三方工具，如 genie，可以在 WSL 中启用 `systemd`。安装并使用这些工具后，你就可以在 WSL 中使用 `systemctl` 命令了。然而，这些工具可能需要你进行一些复杂的配置，而且可能引发其他的问题。
-
-③ **使用 WSL 2 并手动启动 systemd**
-
-如果你正在使用 WSL 2，你可以通过在每次用户登录时在 .bashrc 中手动运行 systemd 的方式来解决这个问题。然而，这种方法可能会导致一些预期之外的问题，所以虽然它可以工作，但并不推荐使用。
-
-总的来说，如果你只是需要管理服务，那么最推荐的方式是直接使用 `service` 命令，这是最简单，也是最不容易出问题的方法。
