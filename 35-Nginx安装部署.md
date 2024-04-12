@@ -123,3 +123,41 @@ systemctl status nginx
 ```
 
 如果 `nginx` 成功运行，你应该能看到 `active (running)` 在输出的文本中。
+
+## 三、Nginx 卸载
+
+### 2.Ubuntu 卸载
+
+在 **Ubuntu 22.04** 上卸载 **Nginx** 非常简单。请按照以下步骤操作：
+
+1. **停止 Nginx 服务**：首先，我们需要停止正在运行的 Nginx 服务。在终端中运行以下命令：
+
+   ```shell
+   sudo systemctl stop nginx
+   ```
+
+   这将停止 Nginx 服务。
+
+2. **卸载 Nginx**：接下来，您可以使用以下命令卸载 Nginx：
+
+   ```shell
+   sudo apt remove nginx
+   ```
+
+   这将从系统中卸载 Nginx，包括位于 `/etc/nginx` 目录下的配置文件。该目录将被完全删除。
+
+3. **清理残留文件**：如果您希望彻底清除与 Nginx 相关的所有文件，可以运行以下命令：
+
+   ```shell
+   sudo apt-get purge nginx nginx-common
+   ```
+
+   这将删除不再需要的 Nginx 依赖项。
+
+4. **验证卸载**：最后，您可以运行以下命令来验证是否成功卸载了 Nginx：
+
+   ```shell
+   sudo systemctl status nginx
+   ```
+
+   如果输出中不再显示 Nginx 服务，那么您已成功卸载它。

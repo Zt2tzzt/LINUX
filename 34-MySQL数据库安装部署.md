@@ -557,8 +557,49 @@ bind-address            = 0.0.0.0
 use mysql;
 
 ALTER USER 'root'@'%' IDENTIFIED WITH caching_sha2_password BY '新密码';
+# 或者
+ALTER USER 'root'@'%' IDENTIFIED BY '新密码';
+# 或者
+update user set authentication_string=password('新密码') where user='root';
+# 或者
+SET PASSWORD FOR 'root' = PASSWORD('新密码');
+
 
 flush privileges;
 ```
 
 `%` 表示所有 ip 都可以连接，如果只想让 root 用户进行本地连接，使用 `localhost`
+
+## 八、MySQL8 在 Ubuntu 中卸载
+
+在 **WSL** 中卸载 **MySQL** 非常简单。请按照以下步骤操作：
+
+1. 首先，确保 **MySQL 服务已停止**。您可以使用以下命令停止它：
+
+   ```bash
+   sudo systemctl stop mysql
+   ```
+
+2. 接下来，卸载与 **MySQL** 相关的所有软件包。运行以下命令以完全删除 **MySQL**：
+
+   ```bash
+   sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+   ```
+
+3. 删除 **MySQL** 的配置和数据。如果您在 **MySQL** 配置中更改了数据库位置，请相应地替换 `/var/lib/mysql`：
+
+   ```bash
+   sudo rm -rf /etc/mysql /var/lib/mysql
+   ```
+
+4. （可选）删除不必要的软件包：
+
+   ```bash
+   sudo apt autoremove
+   ```
+
+5. （可选）清理 **apt 缓存**：
+
+   ```bash
+   sudo apt autoclean
+   ```
