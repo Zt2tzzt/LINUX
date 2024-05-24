@@ -455,21 +455,22 @@ apt install -y mysql-server
 /etc/init.d/mysql status # 查看状态
 ```
 
-在 WSL 的 Ubuntu 中，启动 MySQL 时，可能会报错。原因是 MySQL 的日志文件夹无权访问，执行下方命令。
+> 在 WSL 的 Ubuntu 中，启动 MySQL 时，可能会报错。原因是 MySQL 的日志文件夹无权访问，执行下方命令。
+>
+> ```shell
+> sudo usermod -d /var/lib/mysql/ mysql
+> ```
+>
+> 再次启动，会发现，还是有一个报错：`-sh: 28: export: Files/Git/mingw64/bin: bad variable name`
+>
+> 在 `/etc/profile` 文件中，修改 WSL 自动配置的环境变量，加入双引号（""）包裹，取消其中空格的影响（Windows 的空格是真的坑啊！）。
+>
+> ```shell
+> export PATH=$PATH:"/mnt/c/Program Files/Git/mingw64/bin"
+> ```
+>
+> 重新开启一个终端，使环境变量生效。
 
-```shell
-sudo usermod -d /var/lib/mysql/ mysql
-```
-
-再次启动，会返现，还是有一个报错：`-sh: 28: export: Files/Git/mingw64/bin: bad variable name`
-
-在 `/etc/profile` 文件中，修改 WSL 自动配置的环境变量，加入双引号（""）包裹，取消其中空格的影响（Windows 的空格是真的坑啊！）。
-
-```shell
-export PATH=$PATH:"/mnt/c/Program Files/Git/mingw64/bin"
-```
-
-重新开启一个终端，使环境变量生效。
 
 5️⃣ 登陆 MySQL
 
@@ -580,25 +581,31 @@ flush privileges;
    sudo systemctl stop mysql
    ```
 
-2. 接下来，卸载与 **MySQL** 相关的所有软件包。运行以下命令以完全删除 **MySQL**：
+2. 卸载 Mysql
+
+   ```shell
+   apt remove -y mysql-server
+   ```
+
+3. 接下来，卸载与 **MySQL** 相关的所有软件包。运行以下命令以完全删除 **MySQL**：
 
    ```bash
    sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
    ```
 
-3. 删除 **MySQL** 的配置和数据。如果您在 **MySQL** 配置中更改了数据库位置，请相应地替换 `/var/lib/mysql`：
+4. 删除 **MySQL** 的配置和数据。如果您在 **MySQL** 配置中更改了数据库位置，请相应地替换 `/var/lib/mysql`：
 
    ```bash
    sudo rm -rf /etc/mysql /var/lib/mysql
    ```
 
-4. （可选）删除不必要的软件包：
+5. （可选）删除不必要的软件包：
 
    ```bash
    sudo apt autoremove
    ```
 
-5. （可选）清理 **apt 缓存**：
+6. （可选）清理 **apt 缓存**：
 
    ```bash
    sudo apt autoclean
