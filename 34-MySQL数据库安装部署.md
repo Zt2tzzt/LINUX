@@ -471,7 +471,6 @@ apt install -y mysql-server
 >
 > 重新开启一个终端，使环境变量生效。
 
-
 5️⃣ 登陆 MySQL
 
 ```shell
