@@ -416,7 +416,7 @@ mysql -uroot -p
 
 ## 七、MySQL8.0 在 Ubuntu 中安装和配置
 
-> WSL 环境是最新的 Ubuntu22.04 版本，这个版本的软件商店内置的 MySQL 是 8.0 版本
+> WSL 环境是最新的 Ubuntu 22.04 版本，这个版本的软件商店内置的 MySQL 是 8.0 版本
 >
 > 所以直接通过 apt 命令安装即可。
 
@@ -539,7 +539,7 @@ mysql -uroot -p
 
 至此，在 Ubuntu 上安装 MySQL8.0 版本成功。
 
-### 1.root 用户远程访问
+### 7.1.root 用户远程访问
 
 修改文件 /etc/mysql/mysql.conf.d/mysqld.cnf 中的配置
 
@@ -549,7 +549,19 @@ bind-address            = 0.0.0.0
 
 修改 mysql 库中的 user 表， 将 rout 用户的 host 字段改为 `%`。
 
-### 2.root 用户修改密码
+```mysql
+USE mysql;
+
+UPDATE user SET host = '%' WHERE user = 'root';
+```
+
+刷新权限
+
+```mysql
+flush privileges;
+```
+
+### 7.2.root 用户修改密码
 
 如果要修改 MySQL 数据库 root 用户的密码，执行如下 sql 语句操作：
 
@@ -569,6 +581,65 @@ flush privileges;
 ```
 
 `%` 表示所有 ip 都可以连接，如果只想让 root 用户进行本地连接，使用 `localhost`
+
+### 7.3.用户创建
+
+创建用户，执行命令：
+
+```mysql
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+```
+
+- `username`，用户名。
+- `host`，可远程连接的 ip 地址；
+  - `localhost`，表示仅本地连接；
+  - `%`，表示所有 ip 都可连接。
+- `password`，密码。
+
+### 7.4.用户授权
+
+授权用户。执行命令：
+
+```mysql
+GRANT privileges ON databasename.tablename TO 'username'@'host'
+```
+
+- `privileges`：用户的操作权限；
+  - 有 `SELECT`，`INSERT`，`UPDATE` 等，如果要授予所的权限则使用 `ALL`。
+- `databasename`：数据库名。
+- `tablename`：表名，如果要授予该用户对所有数据库和表的相应操作权限，则可用 `*` 表示，如 `*.*`
+
+注意：用以上命令授权的用户，不能给其它用户授权，如果想让该用户可以授权，用以下命令:
+
+```mysql
+GRANT privileges ON databasename.tablename TO 'username'@'host' WITH GRANT OPTION;
+```
+
+撤销授权，执行命令：
+
+```mysql
+REVOKE privilege ON databasename.tablename FROM 'username'@'host';
+```
+
+- `privilege`,  `databasename`, `tablename`：同授权部分。
+
+注意：假如你在给用户 'pig'@'%' 授权的时候是这样的：`GRANT SELECT ON test.user TO 'pig'@'%';`
+
+则在使用 `REVOKE SELECT ON *.* FROM 'pig'@'%';` 命令，并不能撤销该用户对 test 数据库中 user 表的SELECT 操作。
+
+相反，如果授权使用的是 `GRANT SELECT ON *.* TO 'pig'@'%';`
+
+则 `REVOKE SELECT ON test.user FROM 'pig'@'%';` 命令也不能撤销该用户对 test 数据库中 user 表的 Select权限。
+
+具体信息可以用命令 `SHOW GRANTS FOR 'pig'@'%';` 查看。
+
+### 7.5.用户删除
+
+删除用户，执行命令：
+
+```mysql
+DROP USER 'username'@'host';
+```
 
 ## 八、MySQL8 在 Ubuntu 中卸载
 
