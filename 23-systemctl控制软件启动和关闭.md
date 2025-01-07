@@ -10,6 +10,7 @@
 
 - `start`，表示启动。
 - `stop`，表示停止。
+- `restart`，表示重启。
 - `status`，表示查看状态。
 - `enable`，表示开启开机启动。
 - `disable`，表示关闭开机启动。
